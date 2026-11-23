@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import shlex
 import shutil
 import sys
@@ -16,17 +15,11 @@ from .config import config_home
 
 STATUS = "Checking defensive prose"
 DEFAULT_CONFIG = '''# Codex Prose Lint
-model = "typesafe/jev-1.14"
-threshold = 0.8
-context_mode = "paragraph"
-batch_size = 12
 max_candidates = 36
-max_annotations = 8
-timeout_seconds = 12
-budget_seconds = 35
-include_user_prompt = true
+max_message_chars = 30000
+max_clause_chars = 800
+max_context_chars = 2400
 mode = "annotate"
-# env_file = "/absolute/path/to/private.env"
 '''
 
 
@@ -53,25 +46,6 @@ def atomic_write(path: Path, value: str, mode: int = 0o600) -> None:
     finally:
         if os.path.exists(temporary):
             os.unlink(temporary)
-
-
-def write_key_file(path: Path, value: str) -> None:
-    """Update the key while preserving unrelated entries in a custom env file."""
-    original = path.read_text() if path.exists() else ""
-    lines = []
-    inserted = False
-    assignment = f'OPENROUTER_API_KEY="{value}"\n'
-    for line in original.splitlines(keepends=True):
-        if re.match(r"^\s*(?:export[ \t]+)?OPENROUTER_API_KEY[ \t]*=", line):
-            if not inserted:
-                lines.append(assignment)
-                inserted = True
-        else:
-            lines.append(line)
-    content = "".join(lines)
-    if not inserted:
-        content += ("\n" if content and not content.endswith("\n") else "") + assignment
-    atomic_write(path, content)
 
 
 def update_hooks(home: Path, config_path: Path, *, remove: bool = False) -> Path:

@@ -1,12 +1,12 @@
 [project]
 name = "codex-prose-lint"
-version = "0.1.1"
+version = "0.2.0"
 description = "A Stop hook that flags defensive prose for strikethrough review."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{name = "Cheney Zhang", email = "chen.zhang@zilliz.com"}]
-dependencies = ["httpx>=0.28,<1", "markdown-it-py>=3,<5"]
+dependencies = ["markdown-it-py>=3,<5"]
 
 [project.scripts]
 codex-prose-lint = "codex_prose_lint.cli:main"

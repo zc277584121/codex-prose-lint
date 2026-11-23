@@ -1,90 +1,89 @@
 # Codex Prose Lint
 
-给 Codex App 的回答加一层防御性写作检查：找出多余的免责、限定和自我保护语句，再请 Codex 在原会话中输出带删除线的版本。
+给 Codex App 的回答加一轮表达检查：本地词表找出可能的防御性或否定表达，再由原会话中的 Codex 结合上下文复核。
 
 已经更新配置，下一轮会使用新规则。~~不过，我无法保证每次回答都完全符合你的偏好。~~
 
-第一版只检查 `last_assistant_message`。脚本按标点切分短句、用固定词表挑出候选，再通过 **OpenRouter 的 Jev 1.14** 判断每个候选是否确属多余的防御性表达。达到阈值后，`Stop` hook 把可疑片段交回 Codex，由它复核并标注，最多续写一次。
+多余的免责和限定用删除线标出；包含有用信息、但措辞过于防御的句子，允许轻微改成直接表达。整个 hook 使用本地文本处理，安装时无需配置决策模型或 API key。
 
 ## 安装到 Codex App
 
-准备好 [uv](https://docs.astral.sh/uv/getting-started/installation/) 和 OpenRouter API key，然后在终端运行：
+准备好 [uv](https://docs.astral.sh/uv/getting-started/installation/)，然后运行：
 
-```sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
+~~~sh
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.0'
 export PATH="$(uv tool dir --bin):$PATH"
-codex-prose-lint configure-key
 codex-prose-lint install
 codex-prose-lint doctor
-```
+~~~
 
-`configure-key` 会隐藏输入，把密钥保存到本机权限为 `0600` 的文件。如果终端里已经有 `OPENROUTER_API_KEY`，可以用 `codex-prose-lint configure-key --from-env`。这样从桌面启动的 App 也能读取密钥，无需依赖终端环境的继承。
+随后在 **App 设置 → Hooks** 中审核并信任 **Checking defensive prose**。如果页面尚未发现新钩子，重启 App；当前版本关闭 hooks 时，在 ~/.codex/config.toml 已有的 [features] 中设置 hooks = true。
 
-随后在 **Codex App 的 Hooks 设置**中，审核并信任新出现的 **Checking defensive prose**。如果 App 尚未发现新钩子，重启一次；以后钩子命令改变时，App 可能要求重新审核。
+安装器合并 ~/.codex/hooks.json，保留已有钩子并备份原文件。注册命令使用 Python 的绝对路径，App 可以直接调用；配置保存在 ~/.config/codex-prose-lint/config.toml，也支持 CODEX_HOME 和 XDG 目录设置。
 
-安装器会合并 `~/.codex/hooks.json`，保留已有的 MemSearch 等钩子，并给原文件留备份。它使用虚拟环境中 Python 的绝对路径，配置保存在 `~/.config/codex-prose-lint/config.toml`；支持自定义 `CODEX_HOME` 和 XDG 配置目录。
+## 升级已有安装
 
-如果当前版本关闭了 hooks，在 `~/.codex/config.toml` 已有的 `[features]` 中设置 `hooks = true`，再重启 App。原生钩子的发现与信任流程见 [Codex 文档](https://learn.chatgpt.com/docs/hooks)。
+~~~sh
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.0'
+export PATH="$(uv tool dir --bin):$PATH"
+codex-prose-lint --version
+codex-prose-lint doctor
+~~~
 
-已有安装可以这样升级：
+已有钩子继续使用同一个 uv 工具环境路径。Doctor 会显示实际运行版本、Python 路径、模块路径和已注册命令，便于核对源码与运行环境。
 
-```sh
-uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
-```
+旧配置中的模型、阈值、API 密钥路径、超时和标注数量限制会被识别并忽略，具体字段显示在 doctor 的 ignored_legacy_settings 中。旧的密钥文件留在本机，当前版本不读取；configure-key 命令和 inspect 的 --live、--question 参数已移除。
 
-配置和密钥保存在独立目录，已注册的钩子继续使用同一个 uv 工具环境路径。
+## 一条回答怎样经过检查
 
-## 显示效果和范围
+回答结束时，Stop hook 读取 last_assistant_message，先保护代码、引用块、链接、HTML、表格和已有删除线，再按中英文标点切成短句。词表覆盖「不会、避免、没有、并未、尚未、不要、不应、不足以、仅作、只涉及」及常见变体。
 
-原回答可能先流式显示，随后在同一个会话里出现带删除线的回答。修订提示只要求复核可疑片段并添加 `~~`，保持正文措辞和排版，不要求调用工具或修改文件。
+符合长度和数量限制的候选按原文顺序，直接随 block 提示交给 Codex。提示会说明这些是词面命中，并请它结合原会话判断：多余的防御性补充用删除线；需要保留的信息做小幅改写；合适的事实否定、技术限制和引用例子保留。
 
-文档内容、工具结果和子 Agent 输出都不在扫描范围。为了判断一句话是否与用户问题有关，默认会从本机记录中读取最近一条用户问题作为上下文；可以设置 `include_user_prompt = false` 关闭。
+Codex 随后完整输出修订后的回答，最多续写一次。原回答可能先流式显示；全部候选都合适时，复核结果也可能与原回答相同。
 
-这一版面向 Codex App，删除线显示效果已在 App 对话中确认。没有进行 TUI 界面测试，也没有进行英文质量评测。
+## 配置
 
-## 检测方式
+| 配置项 | 默认值 | 用途 |
+| --- | --- | --- |
+| max_candidates | 36 | 每轮送去复核的候选上限，按原文顺序选取。 |
+| max_message_chars | 30000 | 最后一条回答的长度上限。 |
+| max_clause_chars | 800 | 单个候选短句的长度上限。 |
+| max_context_chars | 2400 | 本地 inspect 输出的上下文长度。 |
+| mode | annotate | 自动续写复核；report 只显示候选提示。 |
 
-中英文共用一套切分逻辑、词表和判别提示词。逗号、分号、冒号和句末标点用于切分候选，数字中的小数点、版本号及时间中的冒号会保留；代码、引用块、链接、HTML、表格和已有删除线会被排除。
+扫描范围是最后一条回答。原会话为 Codex 提供复核上下文，脚本无需读取会话记录；通过 stop_hook_active 和本地去重记录限制为每轮一次续写。
 
-中文词表覆盖「不会、没有、并未、尚未」等否定表达，「避免、以免、不要、不应」等提醒，以及「仅作、只涉及、不足以证明、不作保证、有待验证」等限定句式。同一规则也能匹配「也不会」「为避免」「尚未逐项核实」这样的变体；具体更新见 [版本记录](CHANGELOG.md)。
+## 本地查看候选
 
-候选可以只携带短句，也可以携带整句或所在段落。每个候选对应一个独立的 `noul` 问题，同一批问题合并到一次 OpenRouter 请求中；默认每批最多 12 个。
+~~~sh
+codex-prose-lint inspect examples/answer.zh.md
+codex-prose-lint inspect examples/answer.zh.md --markdown
+~~~
 
-模型返回的是概率，阈值由程序判断。比如「无法连接数据库」可能是在报告真实故障；「不能保证所有情况都适用」也可能是在回答用户专门询问的限制，这些需要结合上下文保留。
+第一条显示候选、位置和命中词。第二条把全部词面候选加上删除线，便于预览位置；实际保留、划线或轻微改写，由 Codex 的上下文复核决定。
 
-## 调整配置
+诊断日志位于 ~/.local/state/codex-prose-lint/events.jsonl，记录运行版本、处理流程、候选数量和扫描耗时，不保存回答正文。
 
-| 配置项 | 用途 |
-| --- | --- |
-| `threshold` | 默认 `0.8`，依据中文校准集选择；达到该值才交给 Codex 复核。 |
-| `context_mode` | 默认 `paragraph`，也可选 `clause` 或 `sentence`。 |
-| `batch_size` | 默认一次请求判断 12 个候选。 |
-| `mode` | `annotate` 自动续写标注版；`report` 只显示钩子提示。 |
-| `include_user_prompt` | 是否附带最近的用户问题。 |
-| `env_file` | 指定已有的私密环境变量文件。 |
+## 开发与验证
 
-完整设置和默认限制见 [英文 README](README.md#configuration)。没有候选时不调用 API；接口或配置出错时放行原回答。通过 `stop_hook_active` 和本机去重记录避免反复续写。
+~~~sh
+uv sync --locked --dev
+uv run ruff check .
+uv run pytest
+uv run python evals/check_local.py
+uv build
+~~~
 
-## 查看检测结果
+离线检查覆盖 56 条中文样本，包括「不能一起归入旧架构」和「我不会把普通 pgvector 作为……底座」的候选传递。自动化测试检查无网络调用、旧配置兼容、Markdown 保护、原文位置、安装和续写去重。
 
-在源码目录运行：
-
-```sh
-uv sync --dev
-uv run codex-prose-lint inspect examples/answer.zh.md
-uv run codex-prose-lint inspect examples/answer.zh.md --live --question '配置改好了吗？'
-uv run codex-prose-lint inspect examples/answer.zh.md --live --markdown --question '配置改好了吗？'
-```
-
-第一条检查命令只做本地切句和词表扫描。加上 `--live` 才调用 OpenRouter；`--markdown` 会输出程序直接插入删除线的预览，实际 hook 流程还会由 Codex 复核。
-
-中文实验比较了短句、整句、整段三种输入，以及单次多问题、分开请求、问题逆序的差异。测试数据、原始分数和结论都在仓库内，详见 [评测报告](docs/evaluation.md)。
+App 的删除线显示已经在对话中确认。本次没有安排 TUI 或英文质量评测；早期的决策模型实验保留在 [历史报告](docs/evaluation.md) 和对应版本标签中。
 
 ## 卸载
 
-```sh
+~~~sh
 codex-prose-lint uninstall
 uv tool uninstall codex-prose-lint
-```
+~~~
 
-卸载会移除本项目的钩子，配置、密钥文件和诊断记录留在本机。
+配置和诊断记录留在本机供后续复用。完整实现说明见 [设计文档](docs/design.md)，版本变化见 [Changelog](CHANGELOG.md)。

@@ -1,125 +1,102 @@
 # Codex Prose Lint
 
-A Codex **Stop hook** that spots unnecessary defensive qualifications and asks Codex to mark them with Markdown strikethrough in a revised answer.
+A local Stop hook that finds possible defensive or unnecessarily negative phrasing in the last assistant message, then asks Codex to review it in the same conversation.
 
 已经更新配置，下一轮会使用新规则。~~不过，我无法保证每次回答都完全符合你的偏好。~~
 
-The checker considers only the **last assistant message**. Local code finds candidate clauses; **Jev 1.14 through OpenRouter** judges their relevance. Above-threshold spans become suggestions in one continuation of the original conversation. Codex reviews the suggestions and returns the original answer with accepted spans wrapped in `~~`.
+The scanner sends keyword candidates directly to Codex. Codex can strike redundant defensive text, lightly rephrase useful information into direct language, or retain an appropriate negative statement. The hook uses local text processing and requires no external decision model or API key.
 
-[中文说明](README.zh-CN.md) · [Evaluation](docs/evaluation.md) · [Implementation notes](docs/design.md)
+[中文说明](README.zh-CN.md) · [Design](docs/design.md) · [Release notes](CHANGELOG.md)
 
 ## Install for Codex App
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
 
-```sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
+~~~sh
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.0'
 export PATH="$(uv tool dir --bin):$PATH"
-codex-prose-lint configure-key
 codex-prose-lint install
 codex-prose-lint doctor
-```
+~~~
 
-`configure-key` asks for an **OpenRouter** API key without echoing it and saves it in a local file with permissions `0600`. If your shell already exports `OPENROUTER_API_KEY`, use `codex-prose-lint configure-key --from-env`. The file lets the desktop app use the key even when it does not inherit your terminal's environment.
+Review and trust **Checking defensive prose** in Codex App's Hooks settings. Restart the app if it has not discovered the new handler. If hooks are disabled in your build, enable hooks = true under the existing [features] table in ~/.codex/config.toml.
 
-In **Codex App's Hooks settings**, review and trust the new **Checking defensive prose** Stop hook. Restart the app if it has not discovered the new handler. Codex binds trust to the hook definition; a changed command may need another review.
+The installer merges its Stop handler into ~/.codex/hooks.json, preserves existing hooks, and saves a backup. It registers an absolute Python path, so the app can invoke the installed tool outside a terminal. Settings live in ~/.config/codex-prose-lint/config.toml; CODEX_HOME and XDG directories are supported.
 
-The installer merges its handler into `~/.codex/hooks.json` (or `$CODEX_HOME/hooks.json`), backs up an existing file, and preserves other hooks such as MemSearch. It writes an absolute virtual-environment Python command, so the app does not need `uv` on its own `PATH`. Configuration lives at `~/.config/codex-prose-lint/config.toml`.
+## Upgrade
 
-If your build has hooks disabled, enable `hooks = true` under the existing `[features]` table in `~/.codex/config.toml`, then restart Codex App. See [Codex hooks](https://learn.chatgpt.com/docs/hooks) for the native discovery and trust flow.
+~~~sh
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.0'
+export PATH="$(uv tool dir --bin):$PATH"
+codex-prose-lint --version
+codex-prose-lint doctor
+~~~
 
-To upgrade an existing installation:
+The existing hook continues to use the same uv tool environment path. Doctor reports the running version, Python path, module path, and registered hook commands.
 
-```sh
-uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
-```
+Old model, threshold, credential, timeout, context-mode, and annotation-cap settings are accepted and ignored. Doctor lists those legacy fields. Previous private key files stay on disk and are unused by this release. The old configure-key command and inspect --live/--question options have been removed.
 
-Settings and credentials live separately from the package. The registered hook continues to use the same uv tool environment path.
+## Review flow
 
-## What happens in the app
-
-```text
+~~~text
 Last assistant message
-  → Markdown-aware clause scan
-  → Keyword candidates
-  → One typed Jev question per candidate, batched through OpenRouter
-  → Probability threshold
-  → Stop block with provisional spans
-  → One annotated answer in the same conversation
-```
+  → Protect Markdown regions
+  → Split clauses and match cues
+  → Stop block with candidate text, offsets, and matched words
+  → Codex reviews the candidates in the original conversation
+  → One complete answer with strikethrough and/or small local edits
+~~~
 
-The original answer can appear before the hook finishes. The hook requests a **new annotated answer**; it does not replace an already-rendered chat bubble. The continuation asks for text annotation only, with no tools or file edits.
+The review prompt explicitly treats lexical matches as provisional. Redundant disclaimers get strikethrough; useful information expressed through defensive negation can receive a minimal affirmative rewrite. Facts, recommendations, certainty, and unaffected text should remain intact. Appropriate factual negations, real failures, technical constraints, quotations, and examples can be retained.
 
-Codex App renders `~~strikethrough~~`. This project targets the App workflow; it does not claim TUI rendering or end-to-end TUI validation.
+Every eligible candidate goes to review in source order, up to the configured limit. The original answer may already have streamed before the revised answer appears. If all matches are appropriate, Codex is asked to return the original answer unchanged. Each turn can continue once.
 
-## Try the scanner
+## Scanner and settings
 
-After cloning this repository:
+Chinese and English share one punctuation scanner and cue matcher. Chinese cues include 不会, 避免, 没有, 并未, 尚未, 不要, 不应, 不足以, 仅作, 只涉及, and common variants. Code blocks, inline code, blockquotes, links, HTML, tables, and existing strikethrough are protected.
 
-```sh
-uv sync --dev
-uv run codex-prose-lint inspect examples/answer.zh.md
-uv run codex-prose-lint inspect examples/answer.zh.md --live --question '配置改好了吗？'
-uv run codex-prose-lint inspect examples/answer.zh.md --live --markdown --question '配置改好了吗？'
-```
+| Setting | Default | Purpose |
+| --- | ---: | --- |
+| max_candidates | 36 | Maximum candidates sent to review, in source order. |
+| max_message_chars | 30000 | Maximum last-message length. |
+| max_clause_chars | 800 | Maximum length of an individual candidate. |
+| max_context_chars | 2400 | Context length for local inspection output. |
+| mode | annotate | Continue for review; report emits a candidate notice instead. |
 
-The first command is local. `--live` uses your OpenRouter account. `--markdown` prints a deterministic preview of the thresholded spans; the actual hook lets Codex make the final contextual review.
+The hook only scans last_assistant_message. It does not read a transcript or invoke tools to inspect generated files. The existing Codex conversation supplies context for review. The stop_hook_active field and a local per-turn guard prevent repeated continuations.
 
-## Configuration
+## Inspect locally
 
-The generated TOML file exposes these controls:
+~~~sh
+codex-prose-lint inspect examples/answer.zh.md
+codex-prose-lint inspect examples/answer.zh.md --markdown
+~~~
 
-| Setting | Purpose |
-| --- | --- |
-| `model` | Defaults to `typesafe/jev-1.14`; the client always uses OpenRouter's Decisions endpoint. |
-| `threshold` | Minimum `noul` probability for a span to be suggested; defaults to `0.8`, selected on the Chinese calibration set. |
-| `context_mode` | `clause`, `sentence`, or `paragraph` (default); controls the text shown alongside each target. |
-| `batch_size` | Up to 12 independent questions per request by default. |
-| `max_candidates` / `max_annotations` | Default limits: 36 candidates, 8 suggestions. |
-| `include_user_prompt` | Read the most recent user prompt as context; defaults to `true`. |
-| `mode` | `annotate` continues once; `report` emits a hook warning with the suspected spans. |
-| `env_file` | Optional path to a private file containing `OPENROUTER_API_KEY=...`. |
-| `timeout_seconds` / `budget_seconds` | Request timeout and budget checked during decision processing. |
+The first command shows candidate text, offsets, and matched cues. The Markdown preview strikes **every lexical candidate** to show its location; contextual acceptance and small rewrites happen in Codex's review.
 
-Both Chinese and English cues use **one punctuation scanner and one judgment prompt**. The scanner preserves source offsets and excludes code blocks, inline code, blockquotes, links, HTML, tables, and existing strikethrough. A keyword nominates a candidate; it is never enough to trigger annotation on its own.
+Metadata logs in ~/.local/state/codex-prose-lint/events.jsonl record package version, pipeline, counts, and scan time. They contain no answer text. The same directory holds the duplicate-continuation guard.
 
-Chinese cues include negations (`不会`, `没有`, `并未`, `尚未`), caution (`避免`, `以免`, `不要`, `不应`), limited scope (`仅作`, `只涉及`), and qualification phrases (`不足以证明`, `不作保证`, `有待验证`). See the [release notes](CHANGELOG.md) for vocabulary updates.
+## Develop and verify
 
-No candidates means no API request. Missing credentials, network errors, malformed model output, and timeouts let the original answer finish. `stop_hook_active` and a local per-turn guard limit automatic continuation to once.
-
-## Data and local files
-
-OpenRouter receives the candidate clauses, their configured surrounding context, and optionally the most recent user question (up to 2,000 characters). It does not receive tool outputs, written documents, or the full conversation. Paragraph/sentence context is bounded to 2,400 characters per candidate by default.
-
-The hook reads a bounded tail of the local transcript solely to locate that user question. Set `include_user_prompt = false` to omit it. Logs under `~/.local/state/codex-prose-lint/` contain counts, scores, timing, model IDs, and cost, with no response text or credentials. A small SQLite file prevents duplicate continuations.
-
-## Develop and evaluate
-
-```sh
+~~~sh
 uv sync --locked --dev
 uv run ruff check .
 uv run pytest
-uv run python evals/run.py
-uv run python evals/run.py --live
-```
+uv run python evals/check_local.py
+uv build
+~~~
 
-The live evaluation compares clause/sentence/paragraph context, batched versus individual questions with identical shared state, and reversed question order. It uses 32 synthetic Chinese cases split into 24 calibration and 8 held-out validation cases. Threshold selection uses the calibration split only. English cues are implemented; English quality evaluation is outside this release's test scope.
+The offline check verifies candidate coverage and review payloads for 56 Chinese examples, including the architecture and pgvector negations. Unit tests cover no-network behavior, legacy configuration, source offsets, Markdown protection, installation, and continuation guards. Codex App strikethrough rendering has been confirmed in conversation; TUI behavior and English quality were left outside the evaluation.
 
-Live runs save resumable checkpoints and exact probabilities in `evals/`. See [the evaluation report](docs/evaluation.md) for measured results and [design notes](docs/design.md) for the request and continuation contracts.
+The earlier [model experiment](docs/evaluation.md) and [v0.1.1 evaluation](docs/evaluation-v0.1.1.md) remain historical records. Their runnable code is available at the corresponding version tags.
 
 ## Uninstall
 
-```sh
+~~~sh
 codex-prose-lint uninstall
 uv tool uninstall codex-prose-lint
-```
+~~~
 
-The first command removes this project's Stop handler. Settings, the private key file, and diagnostic state stay on disk for reuse.
+Configuration and diagnostic state stay on disk for reuse.
 
-## References
-
-- [Codex Stop hook contract](https://learn.chatgpt.com/docs/hooks#stop)
-- [OpenRouter Decisions API](https://openrouter.ai/docs/api/api-reference/alphadecisions/submit-a-decisions-request)
-- [Jev 1.14 on OpenRouter](https://openrouter.ai/typesafe/jev-1.14)
-
-MIT license.
+[Codex Stop hook contract](https://learn.chatgpt.com/docs/hooks#stop) · MIT license.

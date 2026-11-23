@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.0 — 2026-11-23
+
+Replaced external model scoring with local lexical screening followed directly by one Codex review. All selected candidates reach the review prompt in source order. The prompt asks for strikethrough on redundant defensive prose and small affirmative rewrites when useful information should be retained.
+
+Removed the decision-service client, API-key setup, transcript reads, scoring thresholds, and HTTP dependency. Existing model-related configuration fields are accepted and ignored during upgrades. Historical decision experiments remain available at the v0.1.x tags.
+
+Added package version and pipeline details to metadata logs and doctor output, plus a --version command. Offline verification covers the two reported architecture/pgvector sentences, legacy configuration, zero network/credential access, source offsets, and one-continuation behavior.
+
 ## v0.1.1 — 2026-11-23
 
 Expanded Chinese candidate detection for negation, unverified work, caution, limited scope, and non-guarantees. New cues include `不会`, `避免`, `没有`, `并未`, `尚未`, `以免`, `不要`, `不应`, `不足以`, `仅作`, and `只涉及`, with common variants such as `不作任何保证` and `有待进一步验证`.

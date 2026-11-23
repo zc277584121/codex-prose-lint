@@ -1,5 +1,7 @@
 # Chinese evaluation
 
+Historical experiment: run the reproduction commands from the [v0.1.0 checkout](https://github.com/zc277584121/codex-prose-lint/tree/v0.1.0). The current release uses local lexical screening and Codex review, described in the [README](../README.md).
+
 This page records the initial v0.1.0 context and grouping experiment. See the [v0.1.1 vocabulary regression check](evaluation-v0.1.1.md) for the expanded scanner's results.
 
 The release uses **paragraph context, batched questions, and a 0.8 threshold**. The target remains the short clause; its paragraph and the latest user question help Jev decide whether the qualification serves the user's request.
@@ -59,4 +61,4 @@ uv run python evals/stability.py --live \
 
 The first command after installation validates local fixtures only. Live runs use `OPENROUTER_API_KEY` or the configured private key file. The main runner checkpoints completed jobs and retries transport failures up to twice; rerun the same command to resume.
 
-Published evidence: [full probabilities and threshold sweeps](../evals/results.zh.json), [same-order repeat](../evals/stability.zh.json), [rubric and request code](../src/codex_prose_lint/judge.py). The recorded runs contain **226 successful requests**, costing **$0.006764352** in reported API usage. Preliminary smoke calls and an interrupted initial run are outside that recorded total. The raw run records the initial 0.85 configuration; threshold sweeps selected the release default of 0.8 afterward.
+Published evidence: [full probabilities and threshold sweeps](../evals/results.zh.json), [same-order repeat](../evals/stability.zh.json), [rubric and request code](https://github.com/zc277584121/codex-prose-lint/blob/v0.1.0/src/codex_prose_lint/judge.py). The recorded runs contain **226 successful requests**, costing **$0.006764352** in reported API usage. Preliminary smoke calls and an interrupted initial run are outside that recorded total. The raw run records the initial 0.85 configuration; threshold sweeps selected the release default of 0.8 afterward.
