@@ -1,0 +1,1393 @@
+{
+  "version": "0.1.1",
+  "timestamp_utc": "2026-11-23T09:45:10.486565+00:00",
+  "prompt_hash": "3b4bbefc50028f2a",
+  "config": {
+    "model": "typesafe/jev-1.14",
+    "threshold": 0.8,
+    "context_mode": "paragraph",
+    "batch_size": 12,
+    "max_candidates": 36,
+    "max_annotations": 8,
+    "max_message_chars": 30000,
+    "max_context_chars": 2400,
+    "timeout_seconds": 12.0,
+    "budget_seconds": 35.0,
+    "include_user_prompt": true,
+    "mode": "annotate",
+    "env_file": ""
+  },
+  "dataset_sha256": {
+    "baseline": "894bcf19998f8ed43edc0a62aedd246938e8cc5eac7c9f7cc120c8b80b105d1d",
+    "expanded_cues": "1a821a4528222551abbb26786d6bcf650d3a75e62b03eb26e1a5be5e1b6f5a27"
+  },
+  "scanner_sha256": "5f52f33b0545acc008e82672dc05f7cf0de5677976fabb01fdc04e729d9dadae",
+  "cases": 54,
+  "total_requests": 48,
+  "total_cost_usd": 0.00146286,
+  "median_seconds": 0.6716488334932365,
+  "summaries": {
+    "baseline": {
+      "threshold": 0.8,
+      "tp": 25,
+      "fp": 0,
+      "fn": 2,
+      "tn": 17,
+      "precision": 1.0,
+      "recall": 0.9259259259259259,
+      "f0.5": 0.9842519685039369
+    },
+    "expanded_cues": {
+      "threshold": 0.8,
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f0.5": 1.0
+    }
+  },
+  "rows": [
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8398459579329938,
+      "cost_usd": 3.8976e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.57
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.52
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.841003582929261,
+      "cost_usd": 3.9942e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.06
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.48
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8498536670813337,
+      "cost_usd": 2.5872e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.96
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8533846669597551,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6714009579736739,
+      "cost_usd": 2.499e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.04
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.662371665937826,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.92
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6780111250700429,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.03
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6884818749967963,
+      "cost_usd": 2.5914e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.06
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6337562908884138,
+      "cost_usd": 5.4474e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.84
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.81
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.87
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.03692462493199855,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": [],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6607726250076666,
+      "cost_usd": 3.822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.98
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6802555419271812,
+      "cost_usd": 3.801e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "如果没有备份",
+          "start": 0,
+          "end": 6,
+          "expected": false,
+          "probability": 0.09
+        },
+        {
+          "id": "c001",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.05
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.645929625025019,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.02
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7228466250235215,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.2
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.671896709012799,
+      "cost_usd": 2.5452e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.16
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6333623749669641,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6331597079988569,
+      "cost_usd": 3.8892e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.92
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.91
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8198221250204369,
+      "cost_usd": 3.9102e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.88
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.046559167094528675,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": [],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.457995209028013,
+      "cost_usd": 3.9606e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.92
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.93
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8070306660374627,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.05
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7397770829265937,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.91
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.026668624952435493,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": [],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6434168750420213,
+      "cost_usd": 5.3214e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.93
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.97
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.678892583004199,
+      "cost_usd": 2.5746e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.89
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2644877909915522,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.09
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.625823458074592,
+      "cost_usd": 2.5494e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.97
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6745802910299972,
+      "cost_usd": 3.7758e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.03
+        },
+        {
+          "id": "c001",
+          "text": "原因是当前账户没有访问权限",
+          "start": 11,
+          "end": 24,
+          "expected": false,
+          "probability": 0.02
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6138314170530066,
+      "cost_usd": 5.3928e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.88
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.93
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6194399999221787,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.27
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.013771250029094517,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": [],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6166483339620754,
+      "cost_usd": 5.1996e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.93
+        }
+      ],
+      "dataset": "baseline"
+    },
+    {
+      "case_id": "new01",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6482385420240462,
+      "cost_usd": 2.499e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这个名字不会自动符合所有人的审美",
+          "start": 10,
+          "end": 26,
+          "expected": true,
+          "probability": 0.95
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new02",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6216435409151018,
+      "cost_usd": 2.4822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这个名字不会自动符合所有人的审美",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.16
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new03",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7641070000827312,
+      "cost_usd": 3.8346e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "为避免误解",
+          "start": 21,
+          "end": 26,
+          "expected": true,
+          "probability": 0.92
+        },
+        {
+          "id": "c001",
+          "text": "这里仅作措辞建议",
+          "start": 27,
+          "end": 35,
+          "expected": true,
+          "probability": 0.94
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new04",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7389430409530178,
+      "cost_usd": 2.4024e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "为避免误删",
+          "start": 0,
+          "end": 5,
+          "expected": false,
+          "probability": 0.27
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new05",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8755608330247924,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "我没有逐项核实文件里的事实",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.94
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new06",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8482279169838876,
+      "cost_usd": 2.4486e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "我没有逐项核实文件里的事实",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new07",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7771398749900982,
+      "cost_usd": 2.4444e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "我并未检查其他文档",
+          "start": 6,
+          "end": 15,
+          "expected": true,
+          "probability": 0.88
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new08",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7062196250772104,
+      "cost_usd": 2.4108e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "我并未检查其他文档",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.06
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new09",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7308916250476614,
+      "cost_usd": 2.5494e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这段文字尚未测试读者的真实反应",
+          "start": 17,
+          "end": 34,
+          "expected": true,
+          "probability": 0.97
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new10",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6890985410427675,
+      "cost_usd": 2.4024e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这个功能尚未测试",
+          "start": 0,
+          "end": 8,
+          "expected": false,
+          "probability": 0.04
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new11",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6560987920965999,
+      "cost_usd": 2.5956e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "请勿把这个比喻理解为所有实现的完整说明",
+          "start": 18,
+          "end": 37,
+          "expected": true,
+          "probability": 0.93
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new12",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6249110830249265,
+      "cost_usd": 2.4318e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "请勿直接删除唯一的备份",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.08
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new13",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6224924999987707,
+      "cost_usd": 3.7758e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这仅涉及格式调整",
+          "start": 7,
+          "end": 15,
+          "expected": true,
+          "probability": 0.81
+        },
+        {
+          "id": "c001",
+          "text": "不包括对内容的专业审核",
+          "start": 16,
+          "end": 27,
+          "expected": true,
+          "probability": 0.9
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new14",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6098921250086278,
+      "cost_usd": 3.7632e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这仅涉及格式调整",
+          "start": 0,
+          "end": 8,
+          "expected": false,
+          "probability": 0.13
+        },
+        {
+          "id": "c001",
+          "text": "不包括对内容的专业审核",
+          "start": 9,
+          "end": 20,
+          "expected": false,
+          "probability": 0.07
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new15",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.629149749991484,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不足以证明所有环境都适用",
+          "start": 9,
+          "end": 24,
+          "expected": true,
+          "probability": 0.8
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new16",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.612116500036791,
+      "cost_usd": 2.4654e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这不足以证明所有环境都适用",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.09
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new17",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.668163749971427,
+      "cost_usd": 2.4108e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "我不作任何保证",
+          "start": 8,
+          "end": 15,
+          "expected": true,
+          "probability": 0.96
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new18",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.650657584075816,
+      "cost_usd": 2.3982e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "我不作任何保证",
+          "start": 0,
+          "end": 7,
+          "expected": false,
+          "probability": 0.1
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new19",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.619598750025034,
+      "cost_usd": 2.4822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "实际效果有待进一步验证",
+          "start": 11,
+          "end": 22,
+          "expected": true,
+          "probability": 0.97
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new20",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.610970541019924,
+      "cost_usd": 2.4402e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "实际效果有待进一步验证",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.1
+        }
+      ],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new21",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.019266542047262192,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": [],
+      "dataset": "expanded_cues"
+    },
+    {
+      "case_id": "new22",
+      "split": "regression",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01864558400120586,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": [],
+      "dataset": "expanded_cues"
+    }
+  ]
+}

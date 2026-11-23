@@ -13,7 +13,7 @@ The checker considers only the **last assistant message**. Local code finds cand
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
 
 ```sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.0'
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint configure-key
 codex-prose-lint install
@@ -27,6 +27,14 @@ In **Codex App's Hooks settings**, review and trust the new **Checking defensive
 The installer merges its handler into `~/.codex/hooks.json` (or `$CODEX_HOME/hooks.json`), backs up an existing file, and preserves other hooks such as MemSearch. It writes an absolute virtual-environment Python command, so the app does not need `uv` on its own `PATH`. Configuration lives at `~/.config/codex-prose-lint/config.toml`.
 
 If your build has hooks disabled, enable `hooks = true` under the existing `[features]` table in `~/.codex/config.toml`, then restart Codex App. See [Codex hooks](https://learn.chatgpt.com/docs/hooks) for the native discovery and trust flow.
+
+To upgrade an existing installation:
+
+```sh
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
+```
+
+Settings and credentials live separately from the package. The registered hook continues to use the same uv tool environment path.
 
 ## What happens in the app
 
@@ -74,6 +82,8 @@ The generated TOML file exposes these controls:
 | `timeout_seconds` / `budget_seconds` | Request timeout and budget checked during decision processing. |
 
 Both Chinese and English cues use **one punctuation scanner and one judgment prompt**. The scanner preserves source offsets and excludes code blocks, inline code, blockquotes, links, HTML, tables, and existing strikethrough. A keyword nominates a candidate; it is never enough to trigger annotation on its own.
+
+Chinese cues include negations (`不会`, `没有`, `并未`, `尚未`), caution (`避免`, `以免`, `不要`, `不应`), limited scope (`仅作`, `只涉及`), and qualification phrases (`不足以证明`, `不作保证`, `有待验证`). See the [release notes](CHANGELOG.md) for vocabulary updates.
 
 No candidates means no API request. Missing credentials, network errors, malformed model output, and timeouts let the original answer finish. `stop_hook_active` and a local per-turn guard limit automatic continuation to once.
 

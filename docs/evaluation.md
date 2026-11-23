@@ -1,5 +1,7 @@
 # Chinese evaluation
 
+This page records the initial v0.1.0 context and grouping experiment. See the [v0.1.1 vocabulary regression check](evaluation-v0.1.1.md) for the expanded scanner's results.
+
 The release uses **paragraph context, batched questions, and a 0.8 threshold**. The target remains the short clause; its paragraph and the latest user question help Jev decide whether the qualification serves the user's request.
 
 ## Recorded run

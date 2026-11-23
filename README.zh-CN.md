@@ -11,7 +11,7 @@
 准备好 [uv](https://docs.astral.sh/uv/getting-started/installation/) 和 OpenRouter API key，然后在终端运行：
 
 ```sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.0'
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint configure-key
 codex-prose-lint install
@@ -26,6 +26,14 @@ codex-prose-lint doctor
 
 如果当前版本关闭了 hooks，在 `~/.codex/config.toml` 已有的 `[features]` 中设置 `hooks = true`，再重启 App。原生钩子的发现与信任流程见 [Codex 文档](https://learn.chatgpt.com/docs/hooks)。
 
+已有安装可以这样升级：
+
+```sh
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.1'
+```
+
+配置和密钥保存在独立目录，已注册的钩子继续使用同一个 uv 工具环境路径。
+
 ## 显示效果和范围
 
 原回答可能先流式显示，随后在同一个会话里出现带删除线的回答。修订提示只要求复核可疑片段并添加 `~~`，保持正文措辞和排版，不要求调用工具或修改文件。
@@ -37,6 +45,8 @@ codex-prose-lint doctor
 ## 检测方式
 
 中英文共用一套切分逻辑、词表和判别提示词。逗号、分号、冒号和句末标点用于切分候选，数字中的小数点、版本号及时间中的冒号会保留；代码、引用块、链接、HTML、表格和已有删除线会被排除。
+
+中文词表覆盖「不会、没有、并未、尚未」等否定表达，「避免、以免、不要、不应」等提醒，以及「仅作、只涉及、不足以证明、不作保证、有待验证」等限定句式。同一规则也能匹配「也不会」「为避免」「尚未逐项核实」这样的变体；具体更新见 [版本记录](CHANGELOG.md)。
 
 候选可以只携带短句，也可以携带整句或所在段落。每个候选对应一个独立的 `noul` 问题，同一批问题合并到一次 OpenRouter 请求中；默认每批最多 12 个。
 

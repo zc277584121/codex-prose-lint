@@ -1,0 +1,22 @@
+{"id":"new01","split":"regression","question":"给读书会起个名字。","answer":"可以叫「纸间漫游」。这个名字不会自动符合所有人的审美。","expected":["这个名字不会自动符合所有人的审美"]}
+{"id":"new02","split":"regression","question":"这个名字能让所有人都喜欢吗？","answer":"这个名字不会自动符合所有人的审美。","expected":[]}
+{"id":"new03","split":"regression","question":"帮我写一句春游通知。","answer":"周六一起去踏青吧，让春风带走这一周的疲惫。为避免误解，这里仅作措辞建议。","expected":["为避免误解","这里仅作措辞建议"]}
+{"id":"new04","split":"regression","question":"如何防止误删文件？","answer":"为避免误删，先备份目标目录。","expected":[]}
+{"id":"new05","split":"regression","question":"把文件名改成 report.md。","answer":"已改名。我没有逐项核实文件里的事实。","expected":["我没有逐项核实文件里的事实"]}
+{"id":"new06","split":"regression","question":"你核实文件里的事实了吗？","answer":"我没有逐项核实文件里的事实。","expected":[]}
+{"id":"new07","split":"regression","question":"把这份文档的排版整理一下。","answer":"排版已完成。我并未检查其他文档。","expected":["我并未检查其他文档"]}
+{"id":"new08","split":"regression","question":"你检查过其他文档了吗？","answer":"我并未检查其他文档。","expected":[]}
+{"id":"new09","split":"regression","question":"写一句温暖的文章结尾。","answer":"愿我们再见时，都带着一路收集的光。不过这段文字尚未测试读者的真实反应。","expected":["不过这段文字尚未测试读者的真实反应"]}
+{"id":"new10","split":"regression","question":"这个功能已经实测了吗？","answer":"这个功能尚未测试。","expected":[]}
+{"id":"new11","split":"regression","question":"用一句简单的比喻解释缓存。","answer":"缓存就像把常用工具放在手边的小抽屉。请勿把这个比喻理解为所有实现的完整说明。","expected":["请勿把这个比喻理解为所有实现的完整说明"]}
+{"id":"new12","split":"regression","question":"清理备份时怎么防止误删？","answer":"请勿直接删除唯一的备份。","expected":[]}
+{"id":"new13","split":"regression","question":"给清单重新排版。","answer":"已经重新排版。这仅涉及格式调整，不包括对内容的专业审核。","expected":["这仅涉及格式调整","不包括对内容的专业审核"]}
+{"id":"new14","split":"regression","question":"你刚才调整的范围是什么，审核过内容吗？","answer":"这仅涉及格式调整，不包括对内容的专业审核。","expected":[]}
+{"id":"new15","split":"regression","question":"这次测试通过了吗？","answer":"这次测试全部通过。不过这不足以证明所有环境都适用。","expected":["不过这不足以证明所有环境都适用"]}
+{"id":"new16","split":"regression","question":"测试结果能证明所有环境都适用吗？","answer":"这不足以证明所有环境都适用。","expected":[]}
+{"id":"new17","split":"regression","question":"给小猫取个名字。","answer":"可以叫「团子」。我不作任何保证。","expected":["我不作任何保证"]}
+{"id":"new18","split":"regression","question":"你对这个结果作出保证吗？","answer":"我不作任何保证。","expected":[]}
+{"id":"new19","split":"regression","question":"写一句生活主题的海报标语。","answer":"把今天过成喜欢的模样。实际效果有待进一步验证。","expected":["实际效果有待进一步验证"]}
+{"id":"new20","split":"regression","question":"新方案的效果已经验证过了吗？","answer":"实际效果有待进一步验证。","expected":[]}
+{"id":"new21","split":"regression","question":"展示一句错误提示代码。","answer":"```python\nraise ValueError('尚未验证，避免直接使用')\n```","expected":[]}
+{"id":"new22","split":"regression","question":"保留已经标注好的回答。","answer":"完成。~~这个名字不会自动符合所有人的审美~~。","expected":[]}

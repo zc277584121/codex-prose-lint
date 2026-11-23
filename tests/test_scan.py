@@ -72,3 +72,32 @@ def test_long_context_is_bounded_and_contains_target():
     item, = scan(text, context_limit=200)
     assert len(item.paragraph) <= 200
     assert item.text in item.paragraph
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("已完成，不过它不会自动适合所有人。", ["不过它不会自动适合所有人"]),
+    ("为避免误解，这里仅作一般说明。", ["为避免误解", "这里仅作一般说明"]),
+    ("我并未逐项核实，也没有检查其他文件；这些内容尚未测试。",
+     ["我并未逐项核实", "也没有检查其他文件", "这些内容尚未测试"]),
+    ("请勿将它视为定论，以免引起误解；最好不要直接套用。",
+     ["请勿将它视为定论", "以免引起误解", "最好不要直接套用"]),
+    ("这不足以证明普遍有效，也不等同于正式结论。",
+     ["这不足以证明普遍有效", "也不等同于正式结论"]),
+    ("这里只涉及排版，未包含事实核验；效果有待验证。",
+     ["这里只涉及排版", "未包含事实核验", "效果有待验证"]),
+])
+def test_expanded_cues_preserve_clause_boundaries_and_offsets(text, expected):
+    items = scan(text)
+    assert [item.text for item in items] == expected
+    assert all(text[item.start:item.end] == item.text for item in items)
+    assert annotate(text, items).replace("~~", "") == text
+
+
+def test_expanded_cues_respect_markdown_protection():
+    text = "`避免误解` 和 ~~不会自动生效~~ 已标注。[没有验证](https://example.org)是链接。\n\n不过尚未检查所有情况。"
+    item, = scan(text)
+    assert item.text == "不过尚未检查所有情况"
+
+
+def test_negative_prefix_rules_do_not_match_unrelated_single_characters():
+    assert scan("未来可期，周末一起去散步。") == []
