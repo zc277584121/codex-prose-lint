@@ -1,0 +1,32 @@
+{"id":"cal01","split":"calibration","question":"你能看到注入的个人指令吗？","answer":"能看到。不过我没有直接读取磁盘文件，因此无法确认它与最新文件完全一致。","expected":["不过我没有直接读取磁盘文件","因此无法确认它与最新文件完全一致"]}
+{"id":"cal02","split":"calibration","question":"你刚才真的读过磁盘上的文件吗，还是只看到了注入文本？","answer":"我看到了注入文本。不过我没有直接读取磁盘文件，因此无法确认它与最新文件完全一致。","expected":[]}
+{"id":"cal03","split":"calibration","question":"给朋友写一句生日祝福。","answer":"愿你新的一岁自在明亮，心里的愿望都慢慢开花。当然这不代表现实中所有愿望都一定能实现。","expected":["当然这不代表现实中所有愿望都一定能实现"]}
+{"id":"cal04","split":"calibration","question":"这个模型能保证每次都返回合法格式吗？","answer":"不能保证每次都返回合法格式，需要校验响应结构并处理格式错误。","expected":[]}
+{"id":"cal05","split":"calibration","question":"为什么这次部署失败了？","answer":"服务无法连接数据库，日志显示连接被拒绝。需要先检查地址和端口。","expected":[]}
+{"id":"cal06","split":"calibration","question":"配置改好了吗？","answer":"已经修改并保存配置。不过我无法保证所有场景下都完全符合你的偏好。","expected":["不过我无法保证所有场景下都完全符合你的偏好"]}
+{"id":"cal07","split":"calibration","question":"这个钩子能直接改写现有聊天气泡吗？","answer":"当前钩子不能直接改写现有聊天气泡，它提供的是追加修订提示的接口。","expected":[]}
+{"id":"cal08","split":"calibration","question":"为什么我改了提示词后缓存命中率下降？","answer":"缓存需要匹配相同的前缀。修改位置之后的内容无法匹配旧缓存，因此需要重新计算。","expected":[]}
+{"id":"cal09","split":"calibration","question":"把这篇文章的开头写得生动一点。","answer":"凌晨两点，服务器还在忙碌，窗外只剩一盏灯。需要说明的是，这只是文学表达，并不意味着所有团队都会在凌晨工作。","expected":["需要说明的是","这只是文学表达","并不意味着所有团队都会在凌晨工作"]}
+{"id":"cal10","split":"calibration","question":"这里的索引位置是字节还是字符？","answer":"这里使用的是字符位置，不是字节位置。中文字符的字节长度可能不同。","expected":[]}
+{"id":"cal11","split":"calibration","question":"给这个读书小组起个名字。","answer":"可以叫「纸间漫游」。以上建议仅供参考，不构成任何实际效果的承诺。","expected":["以上建议仅供参考","不构成任何实际效果的承诺"]}
+{"id":"cal12","split":"calibration","question":"删掉这个目录之后还能恢复吗？","answer":"如果没有备份，删除后无法直接恢复。可以先把目录移到临时位置。","expected":[]}
+{"id":"cal13","split":"calibration","question":"写一句角色对故乡的思念。","answer":"他望着远处的山说：「我无法忘记那条通向家的小路。」","expected":[]}
+{"id":"cal14","split":"calibration","question":"什么叫防御性写作？举个例子。","answer":"例如「不能保证所有情况都适用」，这类泛泛的补充可能让表达变得拖沓。","expected":[]}
+{"id":"cal15","split":"calibration","question":"帮我设置一条写作规则。","answer":"规则是：不要在回答末尾追加「不能保证」等泛泛的免责语句。","expected":[]}
+{"id":"cal16","split":"calibration","question":"单元测试全通过就能证明没有问题吗？","answer":"测试通过不代表没有任何问题，测试只覆盖已经编写的场景。","expected":[]}
+{"id":"cal17","split":"calibration","question":"这次单元测试跑完了吗？","answer":"已经跑完，全部通过。当然测试通过不代表没有任何问题，实际效果仍需自行核实。","expected":["当然测试通过不代表没有任何问题","实际效果仍需自行核实"]}
+{"id":"cal18","split":"calibration","question":"把这段会议通知改得亲切些。","answer":"明天下午三点，我们在二楼见，一起聊聊下个月的安排。严格来说，这种语气不一定适合所有人。","expected":["严格来说","这种语气不一定适合所有人"]}
+{"id":"cal19","split":"calibration","question":"当前版本能否同时处理多个用户？","answer":"当前实现只能处理一个用户，同时处理多个用户需要隔离会话状态。","expected":[]}
+{"id":"cal20","split":"calibration","question":"请解释一下缓存这个词。","answer":"缓存就是把经常使用的结果暂存起来，下次可以更快取到。需要强调，这个解释不适用于所有具体实现细节。","expected":["需要强调","这个解释不适用于所有具体实现细节"]}
+{"id":"cal21","split":"calibration","question":"这个配置适用于我安装的旧版本吗？","answer":"这项配置不适用于旧版本，请先查看版本对应的配置字段。","expected":[]}
+{"id":"cal22","split":"calibration","question":"把文件名改成 report.md。","answer":"已经改成 `report.md`。不过这不意味着文件内容也经过了全面核验。","expected":["不过这不意味着文件内容也经过了全面核验"]}
+{"id":"cal23","split":"calibration","question":"给我一个错误信息的代码示例。","answer":"可以这样写：\n\n```python\nraise ValueError('无法连接数据库')\n```","expected":[]}
+{"id":"cal24","split":"calibration","question":"帮我写一个温暖的结尾。","answer":"愿我们在下一次相逢时，都能带着新的故事。需要注意，以上文字仅供参考，并不保证读者一定产生共鸣。","expected":["需要注意","以上文字仅供参考","并不保证读者一定产生共鸣"]}
+{"id":"val01","split":"validation","question":"你能看到我刚才上传的内容吗？","answer":"能看到，你上传的是一段会议记录。但这不意味着我已经独立验证其中每个事实。","expected":["但这不意味着我已经独立验证其中每个事实"]}
+{"id":"val02","split":"validation","question":"上传记录里的每个事实你都验证过了吗？","answer":"我已经读到了会议记录。但这不意味着我已经独立验证其中每个事实。","expected":[]}
+{"id":"val03","split":"validation","question":"为周末散步写一句轻松的配文。","answer":"把步子放慢一点，让风先走。当然，这种表达并不保证适合每个人的审美。","expected":["这种表达并不保证适合每个人的审美"]}
+{"id":"val04","split":"validation","question":"为什么任务显示失败？","answer":"任务无法读取目标文件，原因是当前账户没有访问权限。","expected":[]}
+{"id":"val05","split":"validation","question":"给我概括一下这篇文章。","answer":"文章讨论了城市公共空间如何影响邻里交流。需要指出，这只是基于现有文本的概括，不能据此推断作者全部的思想。","expected":["需要指出","这只是基于现有文本的概括","不能据此推断作者全部的思想"]}
+{"id":"val06","split":"validation","question":"只凭这篇文章能判断作者全部的思想吗？","answer":"不能据此推断作者全部的思想，还需要结合其他作品与写作背景。","expected":[]}
+{"id":"val07","split":"validation","question":"这是已经标注过的文本，保持原样即可。","answer":"已经完成。~~不过我无法保证所有情况都适用~~。","expected":[]}
+{"id":"val08","split":"validation","question":"把清单排版整齐一点。","answer":"清单已经重新排版。必须说明，这仅限于格式调整，不代表内容本身经过了专业审核。","expected":["必须说明","这仅限于格式调整","不代表内容本身经过了专业审核"]}

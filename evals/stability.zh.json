@@ -1,0 +1,265 @@
+{
+  "timestamp_utc": "2026-11-23T08:46:38.751650+00:00",
+  "prompt_hash": "3b4bbefc50028f2a",
+  "baseline": "evals/results.zh.json",
+  "rows": [
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8761658750008792,
+      "cost_usd": 3.8976e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.61
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.46
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.9125183749711141,
+      "cost_usd": 3.9942e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.08
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.47
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8631632910110056,
+      "cost_usd": 5.4474e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.83
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.83
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.9669574579456821,
+      "cost_usd": 3.822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.98
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6350470409961417,
+      "cost_usd": 3.8892e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.93
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.93
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6417211659718305,
+      "cost_usd": 3.9102e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.89
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6223636670038104,
+      "cost_usd": 3.9606e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.91
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6332197920419276,
+      "cost_usd": 5.3214e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.94
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    }
+  ],
+  "total_requests": 8,
+  "total_cost_usd": 0.000342426
+}

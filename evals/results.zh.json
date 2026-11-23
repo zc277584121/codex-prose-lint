@@ -1,0 +1,5618 @@
+{
+  "timestamp_utc": "2026-11-23T08:40:18.775835+00:00",
+  "prompt_hash": "3b4bbefc50028f2a",
+  "dataset_sha256": "894bcf19998f8ed43edc0a62aedd246938e8cc5eac7c9f7cc120c8b80b105d1d",
+  "config": {
+    "model": "typesafe/jev-1.14",
+    "threshold": 0.85,
+    "context_mode": "paragraph",
+    "batch_size": 12,
+    "max_candidates": 36,
+    "max_annotations": 8,
+    "max_message_chars": 30000,
+    "max_context_chars": 2400,
+    "timeout_seconds": 12.0,
+    "budget_seconds": 35.0,
+    "include_user_prompt": true,
+    "mode": "annotate",
+    "env_file": ""
+  },
+  "cases": 32,
+  "total_seconds": 43.46396379196085,
+  "total_cost_usd": 0.006421926,
+  "total_requests": 218,
+  "summaries": [
+    {
+      "context_mode": "clause",
+      "grouping": "batch",
+      "calibration": {
+        "threshold": 0.7,
+        "tp": 17,
+        "fp": 0,
+        "fn": 2,
+        "tn": 12,
+        "precision": 1.0,
+        "recall": 0.8947368421052632,
+        "f0.5": 0.9770114942528735
+      },
+      "validation": {
+        "threshold": 0.7,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f0.5": 1.0
+      },
+      "threshold_sweep": [
+        {
+          "threshold": 0.5,
+          "tp": 18,
+          "fp": 1,
+          "fn": 1,
+          "tn": 11,
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f0.5": 0.9473684210526316
+        },
+        {
+          "threshold": 0.6,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.7,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.75,
+          "tp": 16,
+          "fp": 0,
+          "fn": 3,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8421052631578947,
+          "f0.5": 0.963855421686747
+        },
+        {
+          "threshold": 0.8,
+          "tp": 12,
+          "fp": 0,
+          "fn": 7,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.631578947368421,
+          "f0.5": 0.8955223880597015
+        },
+        {
+          "threshold": 0.85,
+          "tp": 11,
+          "fp": 0,
+          "fn": 8,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.5789473684210527,
+          "f0.5": 0.873015873015873
+        },
+        {
+          "threshold": 0.9,
+          "tp": 6,
+          "fp": 0,
+          "fn": 13,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.3157894736842105,
+          "f0.5": 0.6976744186046512
+        },
+        {
+          "threshold": 0.95,
+          "tp": 4,
+          "fp": 0,
+          "fn": 15,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.21052631578947367,
+          "f0.5": 0.5714285714285714
+        }
+      ],
+      "median_seconds": 0.6514136040350422,
+      "cost_usd": 0.000859614,
+      "requests": 28
+    },
+    {
+      "context_mode": "clause",
+      "grouping": "single",
+      "calibration": {
+        "threshold": 0.75,
+        "tp": 17,
+        "fp": 0,
+        "fn": 2,
+        "tn": 12,
+        "precision": 1.0,
+        "recall": 0.8947368421052632,
+        "f0.5": 0.9770114942528735
+      },
+      "validation": {
+        "threshold": 0.75,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f0.5": 1.0
+      },
+      "threshold_sweep": [
+        {
+          "threshold": 0.5,
+          "tp": 18,
+          "fp": 1,
+          "fn": 1,
+          "tn": 11,
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f0.5": 0.9473684210526316
+        },
+        {
+          "threshold": 0.6,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.7,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.75,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.8,
+          "tp": 13,
+          "fp": 0,
+          "fn": 6,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.6842105263157895,
+          "f0.5": 0.9154929577464789
+        },
+        {
+          "threshold": 0.85,
+          "tp": 11,
+          "fp": 0,
+          "fn": 8,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.5789473684210527,
+          "f0.5": 0.873015873015873
+        },
+        {
+          "threshold": 0.9,
+          "tp": 6,
+          "fp": 0,
+          "fn": 13,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.3157894736842105,
+          "f0.5": 0.6976744186046512
+        },
+        {
+          "threshold": 0.95,
+          "tp": 3,
+          "fp": 0,
+          "fn": 16,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.15789473684210525,
+          "f0.5": 0.4838709677419355
+        }
+      ],
+      "median_seconds": 0.719690416532103,
+      "cost_usd": 0.001093218,
+      "requests": 42
+    },
+    {
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "calibration": {
+        "threshold": 0.7,
+        "tp": 17,
+        "fp": 0,
+        "fn": 2,
+        "tn": 12,
+        "precision": 1.0,
+        "recall": 0.8947368421052632,
+        "f0.5": 0.9770114942528735
+      },
+      "validation": {
+        "threshold": 0.7,
+        "tp": 7,
+        "fp": 0,
+        "fn": 1,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f0.5": 0.9722222222222222
+      },
+      "threshold_sweep": [
+        {
+          "threshold": 0.5,
+          "tp": 17,
+          "fp": 1,
+          "fn": 2,
+          "tn": 11,
+          "precision": 0.9444444444444444,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9340659340659342
+        },
+        {
+          "threshold": 0.6,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.7,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.75,
+          "tp": 16,
+          "fp": 0,
+          "fn": 3,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8421052631578947,
+          "f0.5": 0.963855421686747
+        },
+        {
+          "threshold": 0.8,
+          "tp": 15,
+          "fp": 0,
+          "fn": 4,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.7894736842105263,
+          "f0.5": 0.949367088607595
+        },
+        {
+          "threshold": 0.85,
+          "tp": 13,
+          "fp": 0,
+          "fn": 6,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.6842105263157895,
+          "f0.5": 0.9154929577464789
+        },
+        {
+          "threshold": 0.9,
+          "tp": 9,
+          "fp": 0,
+          "fn": 10,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.47368421052631576,
+          "f0.5": 0.8181818181818182
+        },
+        {
+          "threshold": 0.95,
+          "tp": 4,
+          "fp": 0,
+          "fn": 15,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.21052631578947367,
+          "f0.5": 0.5714285714285714
+        }
+      ],
+      "median_seconds": 0.664493020507507,
+      "cost_usd": 0.000883932,
+      "requests": 28
+    },
+    {
+      "context_mode": "sentence",
+      "grouping": "single",
+      "calibration": {
+        "threshold": 0.7,
+        "tp": 17,
+        "fp": 0,
+        "fn": 2,
+        "tn": 12,
+        "precision": 1.0,
+        "recall": 0.8947368421052632,
+        "f0.5": 0.9770114942528735
+      },
+      "validation": {
+        "threshold": 0.7,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f0.5": 1.0
+      },
+      "threshold_sweep": [
+        {
+          "threshold": 0.5,
+          "tp": 18,
+          "fp": 1,
+          "fn": 1,
+          "tn": 11,
+          "precision": 0.9473684210526315,
+          "recall": 0.9473684210526315,
+          "f0.5": 0.9473684210526316
+        },
+        {
+          "threshold": 0.6,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.7,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.75,
+          "tp": 16,
+          "fp": 0,
+          "fn": 3,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8421052631578947,
+          "f0.5": 0.963855421686747
+        },
+        {
+          "threshold": 0.8,
+          "tp": 15,
+          "fp": 0,
+          "fn": 4,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.7894736842105263,
+          "f0.5": 0.949367088607595
+        },
+        {
+          "threshold": 0.85,
+          "tp": 12,
+          "fp": 0,
+          "fn": 7,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.631578947368421,
+          "f0.5": 0.8955223880597015
+        },
+        {
+          "threshold": 0.9,
+          "tp": 9,
+          "fp": 0,
+          "fn": 10,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.47368421052631576,
+          "f0.5": 0.8181818181818182
+        },
+        {
+          "threshold": 0.95,
+          "tp": 4,
+          "fp": 0,
+          "fn": 15,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.21052631578947367,
+          "f0.5": 0.5714285714285714
+        }
+      ],
+      "median_seconds": 0.7205321670044214,
+      "cost_usd": 0.00114555,
+      "requests": 42
+    },
+    {
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "calibration": {
+        "threshold": 0.8,
+        "tp": 17,
+        "fp": 0,
+        "fn": 2,
+        "tn": 12,
+        "precision": 1.0,
+        "recall": 0.8947368421052632,
+        "f0.5": 0.9770114942528735
+      },
+      "validation": {
+        "threshold": 0.8,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f0.5": 1.0
+      },
+      "threshold_sweep": [
+        {
+          "threshold": 0.5,
+          "tp": 19,
+          "fp": 1,
+          "fn": 0,
+          "tn": 11,
+          "precision": 0.95,
+          "recall": 1.0,
+          "f0.5": 0.9595959595959596
+        },
+        {
+          "threshold": 0.6,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.7,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.75,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.8,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.85,
+          "tp": 15,
+          "fp": 0,
+          "fn": 4,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.7894736842105263,
+          "f0.5": 0.949367088607595
+        },
+        {
+          "threshold": 0.9,
+          "tp": 12,
+          "fp": 0,
+          "fn": 7,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.631578947368421,
+          "f0.5": 0.8955223880597015
+        },
+        {
+          "threshold": 0.95,
+          "tp": 5,
+          "fp": 0,
+          "fn": 14,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.2631578947368421,
+          "f0.5": 0.6410256410256411
+        }
+      ],
+      "median_seconds": 0.6747640005778521,
+      "cost_usd": 0.0009051,
+      "requests": 28
+    },
+    {
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "calibration": {
+        "threshold": 0.6,
+        "tp": 18,
+        "fp": 0,
+        "fn": 1,
+        "tn": 12,
+        "precision": 1.0,
+        "recall": 0.9473684210526315,
+        "f0.5": 0.989010989010989
+      },
+      "validation": {
+        "threshold": 0.6,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f0.5": 1.0
+      },
+      "threshold_sweep": [
+        {
+          "threshold": 0.5,
+          "tp": 19,
+          "fp": 1,
+          "fn": 0,
+          "tn": 11,
+          "precision": 0.95,
+          "recall": 1.0,
+          "f0.5": 0.9595959595959596
+        },
+        {
+          "threshold": 0.6,
+          "tp": 18,
+          "fp": 0,
+          "fn": 1,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.9473684210526315,
+          "f0.5": 0.989010989010989
+        },
+        {
+          "threshold": 0.7,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.75,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.8,
+          "tp": 17,
+          "fp": 0,
+          "fn": 2,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f0.5": 0.9770114942528735
+        },
+        {
+          "threshold": 0.85,
+          "tp": 16,
+          "fp": 0,
+          "fn": 3,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.8421052631578947,
+          "f0.5": 0.963855421686747
+        },
+        {
+          "threshold": 0.9,
+          "tp": 12,
+          "fp": 0,
+          "fn": 7,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.631578947368421,
+          "f0.5": 0.8955223880597015
+        },
+        {
+          "threshold": 0.95,
+          "tp": 5,
+          "fp": 0,
+          "fn": 14,
+          "tn": 12,
+          "precision": 1.0,
+          "recall": 0.2631578947368421,
+          "f0.5": 0.6410256410256411
+        }
+      ],
+      "median_seconds": 0.7755982289672829,
+      "cost_usd": 0.001192086,
+      "requests": 42
+    }
+  ],
+  "rows": [
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.9109937499742955,
+      "cost_usd": 3.7254e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.32
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.55
+        }
+      ]
+    },
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.101359875057824,
+      "cost_usd": 5.3676e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.37
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.58
+        }
+      ]
+    },
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6676368340849876,
+      "cost_usd": 3.8976e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.59
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.56
+        }
+      ]
+    },
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.93781954201404,
+      "cost_usd": 3.8976e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.69
+        },
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.55
+        }
+      ]
+    },
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8932332920376211,
+      "cost_usd": 5.712e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.62
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.52
+        }
+      ]
+    },
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.788189624901861,
+      "cost_usd": 3.864e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.43
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.48
+        }
+      ]
+    },
+    {
+      "case_id": "cal01",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.1348604579688981,
+      "cost_usd": 5.6448e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 4,
+          "end": 17,
+          "expected": true,
+          "probability": 0.45
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 18,
+          "end": 34,
+          "expected": true,
+          "probability": 0.56
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6097577080363408,
+      "cost_usd": 3.78e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.06
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.54
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.9248491659527645,
+      "cost_usd": 5.4768e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.06
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.51
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6847513749962673,
+      "cost_usd": 3.9942e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.06
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.53
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8736172079807147,
+      "cost_usd": 3.9942e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.44
+        },
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.9787993748905137,
+      "cost_usd": 5.9052e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.09
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.52
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6224040419328958,
+      "cost_usd": 3.9186e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.08
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.57
+        }
+      ]
+    },
+    {
+      "case_id": "cal02",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.977745332987979,
+      "cost_usd": 5.754e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我没有直接读取磁盘文件",
+          "start": 9,
+          "end": 22,
+          "expected": false,
+          "probability": 0.08
+        },
+        {
+          "id": "c001",
+          "text": "因此无法确认它与最新文件完全一致",
+          "start": 23,
+          "end": 39,
+          "expected": false,
+          "probability": 0.56
+        }
+      ]
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7000632919371128,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.95
+        }
+      ]
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6768891250248998,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.95
+        }
+      ]
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6862496669637039,
+      "cost_usd": 2.5872e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7464914999436587,
+      "cost_usd": 2.5872e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6448653329862282,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.95
+        }
+      ]
+    },
+    {
+      "case_id": "cal03",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.63135666702874,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然这不代表现实中所有愿望都一定能实现",
+          "start": 22,
+          "end": 41,
+          "expected": true,
+          "probability": 0.95
+        }
+      ]
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7788816660176963,
+      "cost_usd": 2.4696e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6957581660244614,
+      "cost_usd": 2.4696e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7712184159317985,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7599830409744754,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8491905000992119,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal04",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8007708330405876,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能保证每次都返回合法格式",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6517420409945771,
+      "cost_usd": 2.4066e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.04
+        }
+      ]
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6574845829745755,
+      "cost_usd": 2.4066e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0579520829487592,
+      "cost_usd": 2.499e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0944651659810916,
+      "cost_usd": 2.499e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.04
+        }
+      ]
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7360924169188365,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal05",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7310254169860855,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "服务无法连接数据库",
+          "start": 0,
+          "end": 9,
+          "expected": false,
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0653143340023234,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.88
+        }
+      ]
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0014264159835875,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.87
+        }
+      ]
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6327992909355089,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.93
+        }
+      ]
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6012773340335116,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.94
+        }
+      ]
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6528283749939874,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.87
+        }
+      ]
+    },
+    {
+      "case_id": "cal06",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6295170000521466,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过我无法保证所有场景下都完全符合你的偏好",
+          "start": 10,
+          "end": 31,
+          "expected": true,
+          "probability": 0.86
+        }
+      ]
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6117750419070944,
+      "cost_usd": 2.5032e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.04
+        }
+      ]
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6575549169210717,
+      "cost_usd": 2.5032e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6121656250907108,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7124195419019088,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6412200420163572,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "case_id": "cal07",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6086687499191612,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当前钩子不能直接改写现有聊天气泡",
+          "start": 0,
+          "end": 16,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6389718749560416,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.09
+        }
+      ]
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.611680708010681,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.08
+        }
+      ]
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6077520839171484,
+      "cost_usd": 2.5914e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6356869169976562,
+      "cost_usd": 2.5914e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.07
+        }
+      ]
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7565904170041904,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal08",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6573084170231596,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "修改位置之后的内容无法匹配旧缓存",
+          "start": 12,
+          "end": 28,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6223129159770906,
+      "cost_usd": 4.8762e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.75
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.78
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.86
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.4228361670393497,
+      "cost_usd": 8.379e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.77
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.77
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.85
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6016355000901967,
+      "cost_usd": 5.4474e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.82
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.8
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.87
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7262982499087229,
+      "cost_usd": 5.4474e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.78
+        },
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.8
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.251737334067002,
+      "cost_usd": 0.000100926,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.85
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.81
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.87
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6613215409452096,
+      "cost_usd": 5.1576e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.73
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.75
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.85
+        }
+      ]
+    },
+    {
+      "case_id": "cal09",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2434562089620158,
+      "cost_usd": 9.223200000000001e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要说明的是",
+          "start": 21,
+          "end": 27,
+          "expected": true,
+          "probability": 0.75
+        },
+        {
+          "id": "c001",
+          "text": "这只是文学表达",
+          "start": 28,
+          "end": 35,
+          "expected": true,
+          "probability": 0.74
+        },
+        {
+          "id": "c002",
+          "text": "并不意味着所有团队都会在凌晨工作",
+          "start": 36,
+          "end": 52,
+          "expected": true,
+          "probability": 0.83
+        }
+      ]
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01392924995161593,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01666125003248453,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.014241166994906962,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.013846707995980978,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.015664041973650455,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal10",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01546616607811302,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6116528749698773,
+      "cost_usd": 3.6456e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.94
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.98182079102844,
+      "cost_usd": 5.208e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.94
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6356329579139128,
+      "cost_usd": 3.822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.98
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7548267500242218,
+      "cost_usd": 3.822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.98
+        },
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0350948750274256,
+      "cost_usd": 5.5608e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.98
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6386129170423374,
+      "cost_usd": 3.7464e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "cal11",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.936228874954395,
+      "cost_usd": 5.4096e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "以上建议仅供参考",
+          "start": 10,
+          "end": 18,
+          "expected": true,
+          "probability": 0.96
+        },
+        {
+          "id": "c001",
+          "text": "不构成任何实际效果的承诺",
+          "start": 19,
+          "end": 31,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6536505409749225,
+      "cost_usd": 2.4192e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7436226670397446,
+      "cost_usd": 2.4192e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6293897919822484,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6201985829975456,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6279982500709593,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.08
+        }
+      ]
+    },
+    {
+      "case_id": "cal12",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6418110419763252,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "删除后无法直接恢复",
+          "start": 7,
+          "end": 16,
+          "expected": false,
+          "probability": 0.07
+        }
+      ]
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6366892500082031,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.629038207931444,
+      "cost_usd": 2.4528e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.617474416969344,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6339179589413106,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6404886660166085,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "case_id": "cal13",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6246989159844816,
+      "cost_usd": 2.4948e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "「我无法忘记那条通向家的小路",
+          "start": 9,
+          "end": 23,
+          "expected": false,
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6290149999549612,
+      "cost_usd": 2.4612e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.45
+        }
+      ]
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6455361669650301,
+      "cost_usd": 2.4612e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.47
+        }
+      ]
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6658372920937836,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.27
+        }
+      ]
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7241254999535158,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.2
+        }
+      ]
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6357945409836248,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.2
+        }
+      ]
+    },
+    {
+      "case_id": "cal14",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6364457499003038,
+      "cost_usd": 2.541e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "例如「不能保证所有情况都适用」",
+          "start": 0,
+          "end": 15,
+          "expected": false,
+          "probability": 0.23
+        }
+      ]
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7055300419451669,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.2
+        }
+      ]
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6870362920453772,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.24
+        }
+      ]
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6476582910399884,
+      "cost_usd": 2.5452e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.2
+        }
+      ]
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6473231669515371,
+      "cost_usd": 2.5452e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.15
+        }
+      ]
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6739622500026599,
+      "cost_usd": 2.5452e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.22
+        }
+      ]
+    },
+    {
+      "case_id": "cal15",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7100389170227572,
+      "cost_usd": 2.5452e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不要在回答末尾追加「不能保证」等泛泛的免责语句",
+          "start": 4,
+          "end": 27,
+          "expected": false,
+          "probability": 0.15
+        }
+      ]
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6494573330273852,
+      "cost_usd": 2.4654e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6328195000533015,
+      "cost_usd": 2.4654e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6364283330040053,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6199774169363081,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.04
+        }
+      ]
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6676645000698045,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal16",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6710909160319716,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "测试通过不代表没有任何问题",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6163285000948235,
+      "cost_usd": 3.6834e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.77
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0852614170871675,
+      "cost_usd": 5.2836e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.78
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6818911670707166,
+      "cost_usd": 3.8892e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.92
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7110484580043703,
+      "cost_usd": 3.8892e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.93
+        },
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.94
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2692275829613209,
+      "cost_usd": 5.6952e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.93
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.669490083004348,
+      "cost_usd": 3.8052e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.84
+        }
+      ]
+    },
+    {
+      "case_id": "cal17",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.1475446249824017,
+      "cost_usd": 5.5272e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "当然测试通过不代表没有任何问题",
+          "start": 10,
+          "end": 25,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "实际效果仍需自行核实",
+          "start": 26,
+          "end": 36,
+          "expected": true,
+          "probability": 0.84
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.5821125420043245,
+      "cost_usd": 3.6162e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.78
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.82
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.9763813751051202,
+      "cost_usd": 5.1492e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.8
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.83
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.8132282079895958,
+      "cost_usd": 3.9102e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.85
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7252605420071632,
+      "cost_usd": 3.9102e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.75
+        },
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.82
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.0769810420461,
+      "cost_usd": 5.7372e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.86
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.9376263750018552,
+      "cost_usd": 3.7002e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.84
+        }
+      ]
+    },
+    {
+      "case_id": "cal18",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.3772712919162586,
+      "cost_usd": 5.3172e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "严格来说",
+          "start": 25,
+          "end": 29,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c001",
+          "text": "这种语气不一定适合所有人",
+          "start": 30,
+          "end": 42,
+          "expected": true,
+          "probability": 0.82
+        }
+      ]
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.017203208059072495,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01585045806132257,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.018828375032171607,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.0162485420005396,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01534033298958093,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal19",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01640387496445328,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.602276207995601,
+      "cost_usd": 3.6414e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.73
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.89
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 3.925203958991915,
+      "cost_usd": 5.1996e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.75
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.89
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.0093963749241084,
+      "cost_usd": 3.9606e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.91
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7809070420917124,
+      "cost_usd": 3.9606e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.92
+        },
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 3.237343250075355,
+      "cost_usd": 5.838e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.91
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2725631250068545,
+      "cost_usd": 3.7422e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.9
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal20",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.5155776670435444,
+      "cost_usd": 5.4012e-05,
+      "requests": 2,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要强调",
+          "start": 26,
+          "end": 30,
+          "expected": true,
+          "probability": 0.9
+        },
+        {
+          "id": "c001",
+          "text": "这个解释不适用于所有具体实现细节",
+          "start": 31,
+          "end": 47,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.1401743330061436,
+      "cost_usd": 2.4444e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.08
+        }
+      ]
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.6024814170086756,
+      "cost_usd": 2.4444e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.07
+        }
+      ]
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.224007665994577,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 3.034815124934539,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6113409160170704,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal21",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.5105819170130417,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这项配置不适用于旧版本",
+          "start": 0,
+          "end": 11,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2152141249971464,
+      "cost_usd": 2.4822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.589802541071549,
+      "cost_usd": 2.4822e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6268557909643278,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6478519589873031,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.4697127080289647,
+      "cost_usd": 2.4864e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "cal22",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6554413749836385,
+      "cost_usd": 2.4864e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不过这不意味着文件内容也经过了全面核验",
+          "start": 17,
+          "end": 36,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.013945707934908569,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.014306375058367848,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.014110125019215047,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.013688415987417102,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01374195795506239,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal23",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.014118083054199815,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6464993329718709,
+      "cost_usd": 4.8174e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.95
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2167689999332651,
+      "cost_usd": 8.2026e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.88
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.94
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6981458750087768,
+      "cost_usd": 5.3214e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.93
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.96
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": true,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7521236659958959,
+      "cost_usd": 5.3214e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.97
+        },
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.3192731670569628,
+      "cost_usd": 9.714600000000001e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.91
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.96
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6087461250135675,
+      "cost_usd": 5.0568e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.92
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.94
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "cal24",
+      "split": "calibration",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2796214580303058,
+      "cost_usd": 8.9208e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要注意",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.91
+        },
+        {
+          "id": "c001",
+          "text": "以上文字仅供参考",
+          "start": 25,
+          "end": 33,
+          "expected": true,
+          "probability": 0.94
+        },
+        {
+          "id": "c002",
+          "text": "并不保证读者一定产生共鸣",
+          "start": 34,
+          "end": 46,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6230945830466226,
+      "cost_usd": 2.5032e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.78
+        }
+      ]
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6287698750384152,
+      "cost_usd": 2.5032e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.75
+        }
+      ]
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.632533667027019,
+      "cost_usd": 2.5746e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6024448750540614,
+      "cost_usd": 2.5746e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.9
+        }
+      ]
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.701682792045176,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.68
+        }
+      ]
+    },
+    {
+      "case_id": "val01",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6502760410076007,
+      "cost_usd": 2.5074e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 16,
+          "end": 35,
+          "expected": true,
+          "probability": 0.74
+        }
+      ]
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6510851670755073,
+      "cost_usd": 2.52e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.11
+        }
+      ]
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6217059580376372,
+      "cost_usd": 2.52e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.14
+        }
+      ]
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6285437499172986,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.1
+        }
+      ]
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6603441670304164,
+      "cost_usd": 2.5704e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.1
+        }
+      ]
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6121276250341907,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.13
+        }
+      ]
+    },
+    {
+      "case_id": "val02",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.639221541932784,
+      "cost_usd": 2.5242e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "但这不意味着我已经独立验证其中每个事实",
+          "start": 11,
+          "end": 30,
+          "expected": false,
+          "probability": 0.12
+        }
+      ]
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6348437910201028,
+      "cost_usd": 2.478e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6279737500008196,
+      "cost_usd": 2.478e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6898786250967532,
+      "cost_usd": 2.5494e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6591558749787509,
+      "cost_usd": 2.5494e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.97
+        }
+      ]
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6251228749752045,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "val03",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6260561249218881,
+      "cost_usd": 2.4906e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "这种表达并不保证适合每个人的审美",
+          "start": 16,
+          "end": 32,
+          "expected": true,
+          "probability": 0.96
+        }
+      ]
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6587582080392167,
+      "cost_usd": 2.4108e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.05
+        }
+      ]
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6708619999699295,
+      "cost_usd": 2.4108e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.04
+        }
+      ]
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 3.911532250000164,
+      "cost_usd": 2.4738e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.5296690829563886,
+      "cost_usd": 2.4738e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.7048418750055134,
+      "cost_usd": 2.4738e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "val04",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2639483750099316,
+      "cost_usd": 2.4738e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "任务无法读取目标文件",
+          "start": 0,
+          "end": 10,
+          "expected": false,
+          "probability": 0.03
+        }
+      ]
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.533395209000446,
+      "cost_usd": 4.8594e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.82
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.82
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 4.856271083001047,
+      "cost_usd": 8.3286e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.76
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.76
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.2372801249148324,
+      "cost_usd": 5.3928e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.9
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.93
+        }
+      ]
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.329655292094685,
+      "cost_usd": 9.9288e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.85
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.9
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.93
+        }
+      ]
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.5246571670286357,
+      "cost_usd": 5.1408e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.88
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "val05",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.585959916934371,
+      "cost_usd": 9.1728e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "需要指出",
+          "start": 20,
+          "end": 24,
+          "expected": true,
+          "probability": 0.88
+        },
+        {
+          "id": "c001",
+          "text": "这只是基于现有文本的概括",
+          "start": 25,
+          "end": 37,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c002",
+          "text": "不能据此推断作者全部的思想",
+          "start": 38,
+          "end": 51,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.5709889580029994,
+      "cost_usd": 2.4696e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.14
+        }
+      ]
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6515004590619355,
+      "cost_usd": 2.4696e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.13
+        }
+      ]
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7784098340198398,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.27
+        }
+      ]
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7912134169600904,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.28
+        }
+      ]
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6057022080058232,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.25
+        }
+      ]
+    },
+    {
+      "case_id": "val06",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.6251994579797611,
+      "cost_usd": 2.5368e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "不能据此推断作者全部的思想",
+          "start": 0,
+          "end": 13,
+          "expected": false,
+          "probability": 0.3
+        }
+      ]
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.01449820795096457,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.0145973339676857,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.015054875053465366,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.014609750011004508,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.014739374979399145,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "val07",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14",
+      "elapsed_seconds": 0.015121500007808208,
+      "cost_usd": 0.0,
+      "requests": 0,
+      "transport_retries": 0,
+      "candidates": []
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 0.7369160410016775,
+      "cost_usd": 4.83e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.8
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.87
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.91
+        }
+      ]
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "clause",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.8631231669569388,
+      "cost_usd": 8.240399999999999e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.8
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.84
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.92
+        }
+      ]
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.3842946669319645,
+      "cost_usd": 5.1996e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.91
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.94
+        }
+      ]
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "paragraph",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.7141498340060934,
+      "cost_usd": 9.3492e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.9
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.93
+        }
+      ]
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "batch",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 1.3805009589996189,
+      "cost_usd": 5.0862e-05,
+      "requests": 1,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.9
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.88
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.93
+        }
+      ]
+    },
+    {
+      "case_id": "val08",
+      "split": "validation",
+      "context_mode": "sentence",
+      "grouping": "single",
+      "reversed": false,
+      "model": "typesafe/jev-1.14-20261014",
+      "elapsed_seconds": 2.3587143330369145,
+      "cost_usd": 9.009e-05,
+      "requests": 3,
+      "transport_retries": 0,
+      "candidates": [
+        {
+          "id": "c000",
+          "text": "必须说明",
+          "start": 9,
+          "end": 13,
+          "expected": true,
+          "probability": 0.89
+        },
+        {
+          "id": "c001",
+          "text": "这仅限于格式调整",
+          "start": 14,
+          "end": 22,
+          "expected": true,
+          "probability": 0.86
+        },
+        {
+          "id": "c002",
+          "text": "不代表内容本身经过了专业审核",
+          "start": 23,
+          "end": 37,
+          "expected": true,
+          "probability": 0.94
+        }
+      ]
+    }
+  ]
+}

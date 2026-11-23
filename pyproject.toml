@@ -1,0 +1,34 @@
+[project]
+name = "codex-prose-lint"
+version = "0.1.0"
+description = "A Stop hook that flags defensive prose for strikethrough review."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Cheney Zhang", email = "chen.zhang@zilliz.com"}]
+dependencies = ["httpx>=0.28,<1", "markdown-it-py>=3,<5"]
+
+[project.scripts]
+codex-prose-lint = "codex_prose_lint.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.urls]
+Repository = "https://github.com/zc277584121/codex-prose-lint"
+Issues = "https://github.com/zc277584121/codex-prose-lint/issues"

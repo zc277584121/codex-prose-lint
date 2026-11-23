@@ -1,0 +1,7 @@
+{
+  "hook_event_name": "Stop",
+  "session_id": "prose-lint-example",
+  "turn_id": "example-turn-1",
+  "stop_hook_active": false,
+  "last_assistant_message": "已经更新了配置。只是我无法保证每次回答都完全符合这些要求。"
+}
