@@ -14,6 +14,7 @@ Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
 
 ```sh
 uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.1.0'
+export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint configure-key
 codex-prose-lint install
 codex-prose-lint doctor
