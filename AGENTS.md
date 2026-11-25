@@ -6,7 +6,7 @@ The runtime reads one Codex Stop hook payload from stdin and writes exactly one 
 
 Keep sentence segmentation language-agnostic. Chinese and English cues share one scanner and one review prompt. Protect Markdown code, blockquotes, links, HTML, and existing strikethrough spans. Preserve original character offsets.
 
-The hook performs local lexical screening only. It must not call an external decision service, load API credentials, or read the transcript. Send candidate text, offsets, and matched cues to the original Codex conversation in one Stop continuation. Ask Codex to strike unnecessary defensive prose and minimally rephrase useful information expressed through defensive negation. Preserve factual meaning and leave appropriate negatives intact. Do not request tool calls or file edits.
+The hook performs local lexical screening only. It must not call an external decision service, load API credentials, or read the transcript. Send candidate text, offsets, and matched cues as advisory references in one Stop continuation. Ask Codex to review the entire previous answer and generously strike every defensive or defensive-leaning prose span, including spans outside the suggestions. The final annotations may be more or fewer than the candidates. Only insert strikethrough delimiters; preserve all original wording, punctuation, whitespace, and formatting. Do not request rewrites, tool calls, or file edits.
 
 Use uv run pytest and uv run ruff check . for local checks. Use uv run python evals/check_local.py to verify Chinese candidate coverage and the review payload. Historical model experiments belong to their version tags; current checks run offline.
 

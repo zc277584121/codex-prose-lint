@@ -101,3 +101,15 @@ def test_expanded_cues_respect_markdown_protection():
 
 def test_negative_prefix_rules_do_not_match_unrelated_single_characters():
     assert scan("未来可期，周末一起去散步。") == []
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("不是", "不是"),
+    ("这不是一个必要条件。", "这不是一个必要条件"),
+    ("这不是 A，而是 B。", "这不是 A"),
+])
+def test_standalone_bushi_is_a_candidate_without_ershi(text, expected):
+    item, = scan(text)
+    assert item.text == expected
+    assert "不是" in item.cues
+    assert text[item.start:item.end] == expected

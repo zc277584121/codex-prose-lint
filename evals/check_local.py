@@ -19,6 +19,8 @@ def main() -> None:
         {"id": "architecture", "answer": "不能一起归入旧架构。", "expected": ["不能一起归入旧架构"]},
         {"id": "selection", "answer": "我不会把普通 pgvector 作为这套方案的底座。",
          "expected": ["我不会把普通 pgvector 作为这套方案的底座"]},
+        {"id": "standalone-negation", "answer": "这不是一个必要条件。", "expected": ["这不是一个必要条件"]},
+        {"id": "split-contrast", "answer": "这不是 A，而是 B。", "expected": ["这不是 A"]},
     ])
     reviews = total_candidates = 0
     with tempfile.TemporaryDirectory() as directory:

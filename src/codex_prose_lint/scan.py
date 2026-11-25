@@ -7,9 +7,9 @@ from dataclasses import asdict, dataclass
 
 from markdown_it import MarkdownIt
 
-# Cues only nominate candidates. The decision model decides whether they are useful.
+# Cues nominate reference suggestions; Codex reviews the entire answer.
 CUES = (
-    r"不能|无法|并不|不代表|不意味着|不等于|不一定|未必|不保证|不能保证|无法保证",
+    r"不能|无法|并不|不是|不代表|不意味着|不等于|不一定|未必|不保证|不能保证|无法保证",
     r"不构成|仅供参考|仅限于|这只是|这仅是|这仅仅是|只是说明|只能说明|不能据此|无法据此|不应据此",
     r"需要注意|值得注意|需要指出|需要强调|需要说明|有必要说明|必须说明|严格来说",
     r"准确地说|更准确地说|从严格意义|在严格意义|理论上|原则上|某种程度上",

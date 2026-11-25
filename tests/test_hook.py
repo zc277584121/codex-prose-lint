@@ -43,15 +43,29 @@ def test_reported_negations_reach_review_without_scoring(tmp_path):
     assert "scores" not in event
 
 
-def test_review_contract_allows_strikethrough_and_minimal_rephrasing(tmp_path):
+def test_review_contract_requires_strikethrough_without_rewriting(tmp_path):
     reason = process(payload(), Config(), directory=tmp_path)["reason"]
-    assert "lexical matches, not verified judgments" in reason
+    assert "list is advisory" in reason
     assert "~~text~~" in reason
-    assert "small local edit" in reason
-    assert "Useful information is not by itself a reason" in reason
-    assert "necessary factual negations" in reason
+    assert "Use strikethrough only" in reason
+    assert "Only insert ~~ delimiters" in reason
+    assert "do not rewrite, rephrase, delete" in reason
+    assert "Preserve all original characters" in reason
     assert "Do not call tools, edit files" in reason
     assert "complete previous answer" in reason
+
+
+def test_reference_limit_does_not_limit_whole_answer_review(tmp_path):
+    message = "这不是一个必要条件。需要注意其他情况。"
+    output = process(payload(message), replace(Config(), max_candidates=1), directory=tmp_path)
+    assert len(spans(output)) == 1
+    assert spans(output)[0]["text"] == "这不是一个必要条件"
+    reason = output["reason"]
+    assert "entire previous answer" in reason
+    assert "outside the listed candidates" in reason
+    assert "mild or borderline defensiveness" in reason
+    assert "more or fewer" in reason
+    assert "counts and offsets do not limit" in reason
 
 
 def test_continuation_and_duplicate_invocations_are_skipped(tmp_path):

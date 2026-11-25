@@ -4,14 +4,14 @@
 
 已经更新配置，下一轮会使用新规则。~~不过，我无法保证每次回答都完全符合你的偏好。~~
 
-多余的免责和限定用删除线标出；包含有用信息、但措辞过于防御的句子，允许轻微改成直接表达。整个 hook 使用本地文本处理，安装时无需配置决策模型或 API key。
+复核范围是整条回答，防御性和偏防御性的表达都积极加上删除线。候选列表是参考建议，实际标注可以更多或更少；输出保留全部原文，只插入删除线符号。整个 hook 使用本地文本处理，安装时无需配置决策模型或 API key。
 
 ## 安装到 Codex App
 
 准备好 [uv](https://docs.astral.sh/uv/getting-started/installation/)，然后运行：
 
 ~~~sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.0'
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.1'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint install
 codex-prose-lint doctor
@@ -24,7 +24,7 @@ codex-prose-lint doctor
 ## 升级已有安装
 
 ~~~sh
-uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.0'
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.1'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint --version
 codex-prose-lint doctor
@@ -36,17 +36,19 @@ codex-prose-lint doctor
 
 ## 一条回答怎样经过检查
 
-回答结束时，Stop hook 读取 last_assistant_message，先保护代码、引用块、链接、HTML、表格和已有删除线，再按中英文标点切成短句。词表覆盖「不会、避免、没有、并未、尚未、不要、不应、不足以、仅作、只涉及」及常见变体。
+回答结束时，Stop hook 读取 last_assistant_message，先保护代码、引用块、链接、HTML、表格和已有删除线，再按中英文标点切成短句。词表覆盖「不是、不会、避免、没有、并未、尚未、不要、不应、不足以、仅作、只涉及」及常见变体。
 
-符合长度和数量限制的候选按原文顺序，直接随 block 提示交给 Codex。提示会说明这些是词面命中，并请它结合原会话判断：多余的防御性补充用删除线；需要保留的信息做小幅改写；合适的事实否定、技术限制和引用例子保留。
+出现符合限制的候选时，hook 将候选按原文顺序随 block 提示交给 Codex，触发整条回答的复核。提示明确说明词面匹配可能多找或漏找，要求主动检查全文，将防御性、偏防御性和轻度防御性的措辞都加上删除线，包括候选列表之外的内容。
 
-Codex 随后完整输出修订后的回答，最多续写一次。原回答可能先流式显示；全部候选都合适时，复核结果也可能与原回答相同。
+标注只插入删除线符号，保留所有原文、标点、空白和排版。一句话即使包含有用信息，其中的防御性措辞也可以标出，原文仍然可见；普通事实回答和引用例子按其实际语境判断。
+
+Codex 随后完整输出带标注的回答，最多续写一次。原回答可能先流式显示；整条回答都没有防御性表达时，输出保持原样。
 
 ## 配置
 
 | 配置项 | 默认值 | 用途 |
 | --- | --- | --- |
-| max_candidates | 36 | 每轮送去复核的候选上限，按原文顺序选取。 |
+| max_candidates | 36 | 每轮参考建议的数量上限，按原文顺序选取；最终标注数量独立判断。 |
 | max_message_chars | 30000 | 最后一条回答的长度上限。 |
 | max_clause_chars | 800 | 单个候选短句的长度上限。 |
 | max_context_chars | 2400 | 本地 inspect 输出的上下文长度。 |
@@ -61,7 +63,7 @@ codex-prose-lint inspect examples/answer.zh.md
 codex-prose-lint inspect examples/answer.zh.md --markdown
 ~~~
 
-第一条显示候选、位置和命中词。第二条把全部词面候选加上删除线，便于预览位置；实际保留、划线或轻微改写，由 Codex 的上下文复核决定。
+第一条显示候选、位置和命中词。第二条把全部词面候选加上删除线，便于预览位置；最终的删除线范围由 Codex 通读整条回答后决定。
 
 诊断日志位于 ~/.local/state/codex-prose-lint/events.jsonl，记录运行版本、处理流程、候选数量和扫描耗时，不保存回答正文。
 
@@ -75,7 +77,7 @@ uv run python evals/check_local.py
 uv build
 ~~~
 
-离线检查覆盖 56 条中文样本，包括「不能一起归入旧架构」和「我不会把普通 pgvector 作为……底座」的候选传递。自动化测试检查无网络调用、旧配置兼容、Markdown 保护、原文位置、安装和续写去重。
+离线检查覆盖 58 条中文样本，包括独立的「不是」、跨标点的「不是……而是」，以及架构分类和 pgvector 选型的否定表达。自动化测试检查只加删除线的提示契约、超出候选范围的全文复核、无网络调用、旧配置兼容、Markdown 保护、原文位置、安装和续写去重。
 
 App 的删除线显示已经在对话中确认。本次没有安排 TUI 或英文质量评测；早期的决策模型实验保留在 [历史报告](docs/evaluation.md) 和对应版本标签中。
 

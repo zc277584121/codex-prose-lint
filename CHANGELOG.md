@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.1 — 2026-11-25
+
+Added standalone 不是 as a candidate cue, including contrast clauses separated by punctuation.
+
+The review now requires strikethrough only, preserving all original characters and formatting. Keyword candidates are advisory references for reviewing the entire answer; the final annotations may be more or fewer than the suggestions. The prompt explicitly asks for generous coverage of defensive and defensive-leaning wording, including mild or borderline cases outside the reference list.
+
+Added regression checks for independent negation, the strikethrough-only contract, and whole-answer review beyond candidate limits. Offline coverage includes 58 Chinese examples.
+
 ## v0.2.0 — 2026-11-23
 
 Replaced external model scoring with local lexical screening followed directly by one Codex review. All selected candidates reach the review prompt in source order. The prompt asks for strikethrough on redundant defensive prose and small affirmative rewrites when useful information should be retained.
