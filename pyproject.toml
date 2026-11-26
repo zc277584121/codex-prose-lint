@@ -1,6 +1,6 @@
 [project]
 name = "codex-prose-lint"
-version = "0.2.1"
+version = "0.2.2"
 description = "A Stop hook that flags defensive prose for strikethrough review."
 readme = "README.md"
 requires-python = ">=3.11"

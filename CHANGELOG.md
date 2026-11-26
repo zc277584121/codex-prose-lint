@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.2 — 2026-11-26
+
+The review prompt places closing strikethrough delimiters before trailing punctuation to address the reported App rendering issue. The rule covers all Chinese and English punctuation, including consecutive marks, quotation marks, and brackets, while preserving the original text and punctuation order.
+
+Added a hook-prompt regression check and formatting examples in both READMEs.
+
 ## v0.2.1 — 2026-11-25
 
 Added standalone 不是 as a candidate cue, including contrast clauses separated by punctuation.

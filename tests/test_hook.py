@@ -68,6 +68,17 @@ def test_reference_limit_does_not_limit_whole_answer_review(tmp_path):
     assert "counts and offsets do not limit" in reason
 
 
+def test_review_prompt_keeps_trailing_punctuation_outside_closing_delimiters(tmp_path):
+    reason = process(payload("「这不是一个必要条件。」"), Config(), directory=tmp_path)["reason"]
+    assert "before any trailing punctuation" in reason
+    assert "Never place a closing ~~ immediately after a punctuation character" in reason
+    assert "all Chinese and English punctuation" in reason
+    assert "entire trailing punctuation sequence" in reason
+    assert "preserving their original order" in reason
+    assert "~~你好你好~~。" in reason
+    assert "「~~仅供参考~~。」" in reason
+
+
 def test_continuation_and_duplicate_invocations_are_skipped(tmp_path):
     assert process(payload(), Config(), directory=tmp_path)["decision"] == "block"
     assert process(payload(), Config(), directory=tmp_path) == {}

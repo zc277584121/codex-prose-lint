@@ -11,7 +11,7 @@
 准备好 [uv](https://docs.astral.sh/uv/getting-started/installation/)，然后运行：
 
 ~~~sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.1'
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.2'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint install
 codex-prose-lint doctor
@@ -24,7 +24,7 @@ codex-prose-lint doctor
 ## 升级已有安装
 
 ~~~sh
-uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.1'
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.2'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint --version
 codex-prose-lint doctor
@@ -41,6 +41,8 @@ codex-prose-lint doctor
 出现符合限制的候选时，hook 将候选按原文顺序随 block 提示交给 Codex，触发整条回答的复核。提示明确说明词面匹配可能多找或漏找，要求主动检查全文，将防御性、偏防御性和轻度防御性的措辞都加上删除线，包括候选列表之外的内容。
 
 标注只插入删除线符号，保留所有原文、标点、空白和排版。一句话即使包含有用信息，其中的防御性措辞也可以标出，原文仍然可见；普通事实回答和引用例子按其实际语境判断。
+
+闭合的双波浪号放在末尾标点之前，例如 `~~你好你好~~。`、`「~~仅供参考~~。」`。连续的末尾标点、引号和括号都保留在删除线外，并保持原有顺序；这条规则覆盖全部中英文标点。
 
 Codex 随后完整输出带标注的回答，最多续写一次。原回答可能先流式显示；整条回答都没有防御性表达时，输出保持原样。
 

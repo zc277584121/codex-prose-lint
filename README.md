@@ -13,7 +13,7 @@ The scanner sends keyword matches as reference suggestions. Codex reviews the en
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
 
 ~~~sh
-uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.1'
+uv tool install --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.2'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint install
 codex-prose-lint doctor
@@ -26,7 +26,7 @@ The installer merges its Stop handler into ~/.codex/hooks.json, preserves existi
 ## Upgrade
 
 ~~~sh
-uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.1'
+uv tool install --force --python 3.12 'git+https://github.com/zc277584121/codex-prose-lint@v0.2.2'
 export PATH="$(uv tool dir --bin):$PATH"
 codex-prose-lint --version
 codex-prose-lint doctor
@@ -48,6 +48,8 @@ Last assistant message
 ~~~
 
 The review prompt treats keyword matches as advisory: suggestions may contain false positives and miss other defensive wording. It directs Codex to mark every defensive or defensive-leaning prose span, including mild or borderline cases. The final annotations can be more or fewer than the suggestions. A sentence can carry useful information and still have defensive framing worth marking; its original words remain visible beneath the strikethrough.
+
+Closing strikethrough delimiters go before trailing punctuation, including a sequence of punctuation or closing quotes/brackets: `~~你好你好~~。` and `「~~仅供参考~~。」`. The punctuation keeps its original order outside the strikethrough. This placement rule applies to Chinese and English punctuation throughout the answer.
 
 An eligible keyword match triggers whole-answer review. Reference suggestions are sent in source order up to the configured limit; that limit does not cap the number of final annotations. The prompt requires only insertion of strikethrough delimiters, preserving every original character and the existing formatting. Ordinary direct factual answers and quoted examples are retained when they contain no defensive framing. The original answer may already have streamed before the annotated answer appears, and each turn can continue once.
 

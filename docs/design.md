@@ -8,6 +8,8 @@ Each candidate includes exact text, a zero-based Unicode [start, end) offset, an
 
 The full answer is returned in its original language with only strikethrough delimiters inserted. All original characters, punctuation, whitespace, and formatting are preserved. The final annotation count can be greater or smaller than the candidate count. Useful information does not exempt defensive framing from annotation, since the original text remains visible. Ordinary direct factual answers and quoted examples are judged in context. The prompt requests no rewriting, tools, or file edits; an answer without defensive phrasing is returned unchanged.
 
+The review prompt places every closing delimiter immediately after the final non-punctuation, non-whitespace character. All trailing punctuation and whitespace stay outside the strikethrough in their original order, including punctuation sequences, quotation marks, and brackets. This addresses the reported App rendering issue with punctuation immediately before a closing delimiter; it is an instruction for Codex's generated annotations.
+
 The stop_hook_active field skips the continuation. A SQLite unique key on session/turn ensures repeated or concurrent deliveries produce at most one block. Metadata logs distinguish review_requested, reported, no_candidates, message_too_long, and error outcomes; they do not represent Codex's later review verdict.
 
 ## Scanner
